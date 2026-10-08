@@ -3,340 +3,1447 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
 
-<title>Chaveiro Porto Alegre | Abertura de Veículos 24 Horas</title>
+<title>Chaveiro 24 Horas em Porto Alegre | Residencial, Automotivo e Cofres</title>
 
-<meta name="description" content="Chaveiro 24 horas em Porto Alegre. Especialista em abertura de veículos, chaveiro automotivo e atendimento emergencial. Solicite atendimento imediato pelo WhatsApp.">
+<meta name="description" content="Chaveiro 24 horas em Porto Alegre. Atendimento residencial, automotivo, abertura de cofres e instalação de fechaduras eletrônicas. Atendimento rápido pelo WhatsApp.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+:root{
+  --black:#000000;
+  --yellow:#ffd100;
+  --concrete:#e4e2dd;
+  --brass:#8a6520;
+  --wa:#1fbf5b;
+  --white:#ffffff;
+  --bar-h:0px;
+}
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth
 }
 
 body{
-background:#f5f5f5;
-color:#333;
-line-height:1.6;
+  font-family:Archivo,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  background:var(--white);
+  color:var(--black);
+  font-size:17px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:var(--bar-h);
 }
 
-header{
-background:linear-gradient(90deg,#000,#222);
-color:white;
-text-align:center;
-padding:60px 20px;
+a{
+  color:inherit;
+  text-decoration:none
 }
 
-header h1{
-font-size:42px;
-margin-bottom:15px;
+.wrap{
+  width:100%;
+  max-width:1080px;
+  margin-inline:auto;
+  padding-inline:24px
 }
 
-header p{
-font-size:20px;
-margin-bottom:25px;
+:where(a,button,summary):focus-visible{
+  outline:4px solid var(--yellow);
+  outline-offset:3px;
 }
 
-.btn{
-display:inline-block;
-padding:15px 25px;
-background:#25D366;
-color:white;
-text-decoration:none;
-font-weight:bold;
-border-radius:8px;
-margin:10px;
-transition:0.3s;
+
+/* =========================================================
+   BARRA SUPERIOR
+========================================================= */
+
+.topbar{
+  background:var(--black);
+  color:var(--white)
 }
 
-.btn:hover{
-opacity:0.9;
+.topbar .wrap{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-height:58px
 }
 
-section{
-padding:60px 20px;
-max-width:1200px;
-margin:auto;
+.mark{
+  display:flex;
+  align-items:center;
+  gap:10px
 }
 
-h2{
-margin-bottom:25px;
-color:#111;
-text-align:center;
+.mark svg{
+  width:26px;
+  height:26px;
+  color:var(--yellow)
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.mark b{
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:19px;
+  letter-spacing:.04em;
+  line-height:1;
+  text-transform:uppercase;
 }
 
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 0 15px rgba(0,0,0,.08);
+.topbar-tel{
+  margin-left:auto;
+  font-weight:700;
+  font-size:16px;
+  color:var(--yellow);
+  border-bottom:2px solid transparent;
 }
 
-.card h3{
-margin-bottom:10px;
+.topbar-tel:hover{
+  border-bottom-color:var(--yellow)
 }
 
-.highlight{
-background:black;
-color:white;
-text-align:center;
-padding:60px 20px;
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  background:var(--black);
+  color:var(--white);
+  padding:clamp(48px,9vw,96px) 0 clamp(44px,8vw,84px)
 }
 
-.highlight h2{
-color:white;
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:clamp(32px,5vw,64px);
+  align-items:end
 }
 
-.benefits ul{
-list-style:none;
+.hero h1{
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:clamp(2.75rem,8.4vw,5.5rem);
+  line-height:.92;
+  letter-spacing:-.005em;
+  text-transform:uppercase;
+  color:var(--yellow);
+  text-wrap:balance;
 }
 
-.benefits li{
-padding:10px;
-font-size:18px;
+.hero p{
+  margin-top:22px;
+  max-width:34ch;
+  font-size:clamp(1.05rem,2.2vw,1.3rem);
+  line-height:1.45;
+  color:#dcdcdc;
 }
 
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:40px 20px;
+/* Destaque dos serviços no Hero */
+.hero p:first-of-type{
+  font-family:Anton,Impact,sans-serif;
+  font-size:clamp(1.15rem,2.8vw,1.65rem);
+  line-height:1.2;
+  text-transform:uppercase;
+  color:var(--white);
+  letter-spacing:.02em;
 }
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:18px;
-border-radius:50px;
-font-size:18px;
-text-decoration:none;
-font-weight:bold;
-box-shadow:0 0 15px rgba(0,0,0,.3);
+.hero p + p{
+  margin-top:12px;
+  font-size:16px;
+  color:#bdbdbd;
+  line-height:1.5;
 }
 
-@media(max-width:768px){
-
-header h1{
-font-size:32px;
+.actions{
+  display:grid;
+  gap:12px;
+  width:100%
 }
 
-header p{
-font-size:18px;
+.slab{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:20px 24px;
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:clamp(1.1rem,2.6vw,1.45rem);
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  line-height:1;
+  border:3px solid transparent;
 }
+
+.slab svg{
+  width:28px;
+  height:28px;
+  flex:0 0 auto
+}
+
+.slab-wa{
+  background:var(--wa);
+  color:var(--black)
+}
+
+.slab-wa:hover{
+  background:#17a94e
+}
+
+.slab-tel{
+  background:transparent;
+  color:var(--white);
+  border-color:var(--white)
+}
+
+.slab-tel:hover{
+  background:var(--white);
+  color:var(--black)
+}
+
+.slab small{
+  display:block;
+  font-family:Archivo;
+  font-size:12px;
+  letter-spacing:.02em;
+  text-transform:none;
+  font-weight:500;
+  opacity:.75;
+  margin-top:4px
+}
+
+
+/* =========================================================
+   FAIXA DE SINALIZAÇÃO
+========================================================= */
+
+.hazard{
+  height:18px;
+  background:repeating-linear-gradient(
+    135deg,
+    var(--yellow) 0 22px,
+    var(--black) 22px 44px
+  );
+}
+
+
+/* =========================================================
+   SERVIÇOS
+========================================================= */
+
+.board{
+  background:var(--concrete);
+  padding:clamp(52px,7vw,84px) 0
+}
+
+.board h2,
+.zones h2,
+.faq h2,
+.panel h2{
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:clamp(1.9rem,4.6vw,3rem);
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:-.01em;
+}
+
+.board-list{
+  margin-top:34px;
+  border-top:3px solid var(--black)
+}
+
+.row{
+  display:grid;
+  grid-template-columns:minmax(220px,.9fr) 1.1fr;
+  gap:12px 32px;
+  padding:20px 0;
+  border-bottom:1px solid rgba(0,0,0,.28);
+  align-items:baseline;
+}
+
+.row dt{
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:clamp(1.15rem,2.6vw,1.5rem);
+  line-height:1.08;
+  text-transform:uppercase;
+}
+
+.row dd{
+  color:#3a3a38;
+  font-size:16px;
+  max-width:52ch
+}
+
+
+/* =========================================================
+   PAINEL AMARELO
+========================================================= */
+
+.panel{
+  background:var(--yellow);
+  color:var(--black);
+  padding:clamp(52px,7vw,88px) 0
+}
+
+.panel-grid{
+  display:grid;
+  grid-template-columns:1fr .85fr;
+  gap:clamp(28px,5vw,56px);
+  align-items:center
+}
+
+.panel p{
+  margin-top:18px;
+  max-width:46ch;
+  font-size:1.05rem
+}
+
+.panel .slab-wa{
+  border-color:var(--black)
+}
+
+.panel .actions{
+  max-width:420px
+}
+
+
+/* =========================================================
+   FICHA
+========================================================= */
+
+.spec{
+  padding:clamp(52px,7vw,84px) 0
+}
+
+.spec dl{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:0 48px
+}
+
+.spec div{
+  padding:18px 0;
+  border-bottom:1px solid rgba(0,0,0,.2)
+}
+
+.spec dt{
+  font-size:13px;
+  font-weight:700;
+  color:var(--brass);
+  letter-spacing:.02em
+}
+
+.spec dd{
+  font-size:1.05rem;
+  margin-top:3px
+}
+
+
+/* =========================================================
+   REGIÕES
+========================================================= */
+
+.zones{
+  background:var(--black);
+  color:var(--white);
+  padding:clamp(52px,7vw,84px) 0
+}
+
+.zones h2{
+  color:var(--yellow)
+}
+
+.zone-type{
+  margin-top:28px;
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:clamp(1.5rem,4.6vw,2.9rem);
+  line-height:1.18;
+  text-transform:uppercase;
+  letter-spacing:.005em;
+}
+
+.zone-type i{
+  display:inline-block;
+  width:.3em;
+  height:.3em;
+  background:var(--yellow);
+  margin:0 .42em .12em;
+  vertical-align:middle;
+}
+
+.zones-note{
+  margin-top:22px;
+  color:#b9b9b9;
+  max-width:50ch;
+  font-size:15px
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq{
+  padding:clamp(52px,7vw,84px) 0
+}
+
+.faq-list{
+  margin-top:30px;
+  border-top:3px solid var(--black)
+}
+
+details{
+  border-bottom:1px solid rgba(0,0,0,.28)
+}
+
+summary{
+  cursor:pointer;
+  list-style:none;
+  padding:20px 44px 20px 0;
+  position:relative;
+  font-weight:700;
+  font-size:1.05rem;
+}
+
+summary::-webkit-details-marker{
+  display:none
+}
+
+summary::after{
+  content:"";
+  position:absolute;
+  right:6px;
+  top:50%;
+  width:16px;
+  height:3px;
+  background:var(--black);
+  transform:translateY(-50%);
+}
+
+summary::before{
+  content:"";
+  position:absolute;
+  right:12.5px;
+  top:50%;
+  width:3px;
+  height:16px;
+  background:var(--black);
+  transform:translateY(-50%);
+  transition:opacity .15s;
+}
+
+details[open] summary::before{
+  opacity:0
+}
+
+details p{
+  padding:0 0 22px;
+  max-width:62ch;
+  color:#3a3a38
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.foot{
+  background:var(--black);
+  color:var(--white);
+  padding:clamp(48px,7vw,80px) 0 56px
+}
+
+.foot-tel{
+  display:inline-block;
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:clamp(2.3rem,10vw,5.25rem);
+  line-height:.95;
+  color:var(--yellow);
+  letter-spacing:-.01em;
+}
+
+.foot-tel:hover{
+  text-decoration:underline;
+  text-underline-offset:.08em;
+  text-decoration-thickness:5px
+}
+
+.foot-sub{
+  margin-top:10px;
+  font-size:1.05rem;
+  color:#cfcfcf
+}
+
+.foot-cols{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:28px 40px;
+  margin-top:48px;
+  padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.22);
+  font-size:15px;
+  color:#b9b9b9;
+}
+
+.foot-cols b{
+  display:block;
+  color:var(--white);
+  font-size:13px;
+  margin-bottom:8px;
+  font-weight:700
+}
+
+.foot-cols a{
+  display:block;
+  margin-bottom:4px
+}
+
+.foot-cols a:hover{
+  color:var(--yellow)
+}
+
+.seo{
+  margin-top:40px;
+  font-size:13px;
+  line-height:1.7;
+  color:#7e7e7e;
+  max-width:78ch
+}
+
+.copy{
+  margin-top:26px;
+  font-size:13px;
+  color:#6b6b6b
+}
+
+
+/* =========================================================
+   BARRA FIXA MOBILE
+========================================================= */
+
+.actionbar{
+  display:none
+}
+
+@media (max-width:860px){
+
+  .hero-grid,
+  .panel-grid{
+    grid-template-columns:1fr
+  }
+
+  .hero-grid{
+    gap:34px
+  }
+
+  .row{
+    grid-template-columns:1fr;
+    gap:6px
+  }
+
+  .topbar-tel{
+    font-size:15px
+  }
+
+  :root{
+    --bar-h:76px
+  }
+
+  .actionbar{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:2px;
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:40;
+    border-top:3px solid var(--black);
+  }
+
+  .actionbar a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:11px;
+    padding:20px 16px;
+    font-family:Anton,Impact,sans-serif;
+    font-weight:400;
+    font-size:1.15rem;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+  }
+
+  .actionbar svg{
+    width:26px;
+    height:26px
+  }
+
+  .ab-wa{
+    background:var(--wa);
+    color:var(--black)
+  }
+
+  .ab-tel{
+    background:var(--black);
+    color:var(--yellow);
+    padding-inline:26px
+  }
+
+}
+
+
+/* =========================================================
+   ANIMAÇÃO DO HERO
+========================================================= */
+
+@media (prefers-reduced-motion:no-preference){
+
+  .lift{
+    animation:lift .62s cubic-bezier(.2,.75,.3,1) backwards
+  }
+
+  .lift:nth-child(1){
+    animation-delay:.04s
+  }
+
+  .lift:nth-child(2){
+    animation-delay:.14s
+  }
+
+  .lift:nth-child(3){
+    animation-delay:.20s
+  }
+
+  .hero .actions{
+    animation:lift .62s cubic-bezier(.2,.75,.3,1) .26s backwards
+  }
+
+  @keyframes lift{
+    from{
+      opacity:0;
+      transform:translateY(16px)
+    }
+  }
 
 }
 
 </style>
 </head>
 
+
 <body>
 
-<header>
 
-<h1>CHAVEIRO PORTO ALEGRE</h1>
+<!-- =====================================================
+     TOPO
+===================================================== -->
 
-<p>Atendimento 24 Horas em Porto Alegre.</p>
+<header class="topbar">
 
-<p>Especialistas em abertura de veículos e atendimento emergencial.</p>
+  <div class="wrap">
 
-<a class="btn"
-href="https://wa.me/5551995255922?text=Olá! Preciso de um chaveiro em Porto Alegre."
-target="_blank">
-CHAMAR NO WHATSAPP
-</a>
+    <a class="mark" href="#topo" id="topo">
 
-<a class="btn"
-href="tel:+5551995255922">
-LIGAR AGORA
-</a>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true">
+
+        <circle cx="7.5" cy="16.5" r="3.6"/>
+        <path d="M10.1 13.9 20.5 3.5"/>
+        <path d="m15.4 8.6 2.6 2.6"/>
+
+      </svg>
+
+      <b>Chaveiro Porto Alegre</b>
+
+    </a>
+
+
+    <a
+      class="topbar-tel"
+      href="tel:+5551995255922">
+
+      (51) 99525-5922
+
+    </a>
+
+  </div>
 
 </header>
 
 
-<section>
 
-<h2>Nossos Serviços</h2>
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<div class="cards">
+<section class="hero">
 
-<div class="card">
-<h3>Abertura de Veículos</h3>
-<p>Atendimento rápido e seguro para carros nacionais e importados.</p>
-</div>
+  <div class="wrap hero-grid">
 
-<div class="card">
-<h3>Chaveiro Automotivo</h3>
-<p>Serviços especializados para veículos com atendimento emergencial.</p>
-</div>
+    <div>
 
-<div class="card">
-<h3>Abertura Residencial</h3>
-<p>Abertura de portas e troca de fechaduras.</p>
-</div>
-
-<div class="card">
-<h3>Fechaduras Eletrônicas</h3>
-<p>Venda, instalação e manutenção de fechaduras digitais.</p>
-</div>
-
-<div class="card">
-<h3>Cópias de Chaves</h3>
-<p>Cópias de chaves comuns e automotivas.</p>
-</div>
-
-<div class="card">
-<h3>Atendimento 24 Horas</h3>
-<p>Disponível todos os dias para emergências.</p>
-</div>
-
-</div>
-
-</section>
+      <h1 class="lift">
+        Chaveiro 24 horas em Porto Alegre
+      </h1>
 
 
-<section class="highlight">
-
-<h2>ABERTURA DE VEÍCULOS EM PORTO ALEGRE</h2>
-
-<br>
-
-<p>
-
-Perdeu suas chaves? Trancou o veículo com a chave dentro? O Chaveiro Porto Alegre oferece atendimento rápido em toda a cidade, utilizando técnicas profissionais para preservar a integridade do automóvel sempre que possível.
-
-</p>
-
-<br>
-
-<a class="btn"
-href="https://wa.me/5551995255922?text=Preciso de abertura de veículo em Porto Alegre."
-target="_blank">
-SOLICITAR ATENDIMENTO IMEDIATO
-</a>
-
-</section>
+      <p class="lift">
+        Residencial <strong>•</strong>
+        Automotivo <strong>•</strong>
+        Cofres <strong>•</strong>
+        Fechaduras Eletrônicas
+      </p>
 
 
-<section class="benefits">
+      <p class="lift">
+        Atendimento rápido para abertura de portas, veículos e cofres,
+        troca de fechaduras e instalação de fechaduras eletrônicas.
+      </p>
 
-<h2>Por que escolher o Chaveiro Porto Alegre?</h2>
-
-<ul>
-
-<li>✔ Atendimento 24 Horas.</li>
-<li>✔ Atendimento rápido em toda Porto Alegre.</li>
-<li>✔ Especialistas em abertura de veículos.</li>
-<li>✔ Orçamento imediato pelo WhatsApp.</li>
-<li>✔ Técnicos especializados.</li>
-<li>✔ Pagamento via Pix.</li>
-<li>✔ Pagamento no cartão.</li>
-<li>✔ Pagamento em dinheiro.</li>
-
-</ul>
-
-</section>
+    </div>
 
 
-<section>
+    <div class="actions">
 
-<h2>Atendemos toda Porto Alegre</h2>
 
-<div class="cards">
+      <!-- WHATSAPP -->
 
-<div class="card">Centro Histórico</div>
-<div class="card">Cidade Baixa</div>
-<div class="card">Menino Deus</div>
-<div class="card">Moinhos de Vento</div>
-<div class="card">Petrópolis</div>
-<div class="card">Bela Vista</div>
-<div class="card">Zona Sul</div>
-<div class="card">Zona Norte</div>
+      <a
+        class="slab slab-wa"
+        href="https://wa.me/5551995255922?text=Olá! Preciso de um chaveiro em Porto Alegre."
+        target="_blank"
+        rel="noopener">
 
-</div>
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true">
+
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.02c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.13.07-3.3-.86-2.55-1.1-4.14-3.74-4.27-3.91-.12-.18-1-1.33-1-2.54 0-1.2.63-1.79.86-2.03.23-.25.5-.31.67-.31.17 0 .34 0 .49.01.16.01.37-.06.58.44.21.5.72 1.76.78 1.89.06.12.1.27.02.44-.08.17-.12.27-.24.42-.12.15-.26.33-.37.44-.12.12-.25.25-.11.5.14.24.63 1.04 1.35 1.69.93.83 1.7 1.09 1.95 1.21.24.12.38.1.52-.06.14-.17.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.38.65 1.62.77.24.12.4.18.46.28.06.1.06.59-.18 1.27Z"/>
+
+        </svg>
+
+
+        <span>
+
+          Chamar no WhatsApp
+
+          <small>
+            Resposta rápida e orçamento antes do serviço
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <!-- TELEFONE -->
+
+      <a
+        class="slab slab-tel"
+        href="tel:+5551995255922">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true">
+
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/>
+
+        </svg>
+
+
+        <span>
+          Ligar (51) 99525-5922
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<section>
 
-<h2>Perguntas Frequentes</h2>
+<div class="hazard" role="presentation"></div>
 
-<div class="cards">
 
-<div class="card">
-<h3>Vocês atendem 24 horas?</h3>
-<p>Sim! Nosso atendimento funciona 24 horas em Porto Alegre.</p>
-</div>
 
-<div class="card">
-<h3>Fazem abertura de veículos?</h3>
-<p>Sim! Trabalhamos com veículos nacionais e importados.</p>
-</div>
+<!-- =====================================================
+     SERVIÇOS
+===================================================== -->
 
-<div class="card">
-<h3>Quais formas de pagamento são aceitas?</h3>
-<p>Pix, cartão e dinheiro.</p>
-</div>
+<section class="board" id="servicos">
 
-<div class="card">
-<h3>Quanto tempo demora o atendimento?</h3>
-<p>O atendimento é realizado o mais rápido possível conforme a sua localização.</p>
-</div>
+  <div class="wrap">
 
-</div>
+    <h2>
+      Serviços de chaveiro em Porto Alegre
+    </h2>
+
+
+    <dl class="board-list">
+
+
+      <div class="row">
+
+        <dt>
+          Chaveiro residencial
+        </dt>
+
+        <dd>
+          Abertura de portas de casas, apartamentos e condomínios,
+          além de troca, instalação e manutenção de fechaduras.
+        </dd>
+
+      </div>
+
+
+      <div class="row">
+
+        <dt>
+          Chaveiro automotivo
+        </dt>
+
+        <dd>
+          Abertura de veículos, chaves perdidas ou quebradas,
+          cópias e serviços relacionados a chaves automotivas.
+        </dd>
+
+      </div>
+
+
+      <div class="row">
+
+        <dt>
+          Abertura de cofres
+        </dt>
+
+        <dd>
+          Atendimento para abertura de cofres residenciais,
+          comerciais e outros modelos, utilizando técnica
+          e ferramentas adequadas.
+        </dd>
+
+      </div>
+
+
+      <div class="row">
+
+        <dt>
+          Fechaduras eletrônicas
+        </dt>
+
+        <dd>
+          Instalação, configuração, manutenção e substituição
+          de fechaduras digitais, eletrônicas e biométricas.
+        </dd>
+
+      </div>
+
+
+      <div class="row">
+
+        <dt>
+          Troca de fechaduras
+        </dt>
+
+        <dd>
+          Troca de fechaduras residenciais e comerciais,
+          instalação de cilindros e substituição em casos
+          de perda ou quebra de chave.
+        </dd>
+
+      </div>
+
+
+      <div class="row">
+
+        <dt>
+          Cópias de chaves
+        </dt>
+
+        <dd>
+          Cópias de chaves residenciais e automotivas,
+          conforme o modelo e sistema utilizado.
+        </dd>
+
+      </div>
+
+
+    </dl>
+
+  </div>
 
 </section>
 
 
-<section>
 
-<h2>SEO - Chaveiro Porto Alegre</h2>
+<!-- =====================================================
+     CHAMADA
+===================================================== -->
 
-<p>
+<section class="panel">
 
-Chaveiro 24 horas em Porto Alegre especializado em abertura de veículos, chaveiro automotivo, abertura residencial e instalação de fechaduras eletrônicas. Atendimento rápido e emergencial em toda Porto Alegre, disponível todos os dias da semana. Solicite atendimento imediato pelo WhatsApp.
+  <div class="wrap panel-grid">
 
-</p>
+    <div>
+
+      <h2>
+        Perdeu a chave ou ficou trancado do lado de fora?
+      </h2>
+
+      <p>
+        Não force a porta nem tente improvisar uma abertura.
+        Entre em contato pelo WhatsApp, informe sua localização
+        e o tipo de serviço que precisa. Avaliamos o atendimento
+        antes do deslocamento.
+      </p>
+
+    </div>
+
+
+    <div class="actions">
+
+      <a
+        class="slab slab-wa"
+        href="https://wa.me/5551995255922?text=Olá! Preciso de um chaveiro em Porto Alegre. Gostaria de informações sobre o serviço."
+        target="_blank"
+        rel="noopener">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true">
+
+          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.02c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.13.07-3.3-.86-2.55-1.1-4.14-3.74-4.27-3.91-.12-.18-1-1.33-1-2.54 0-1.2.63-1.79.86-2.03.23-.25.5-.31.67-.31.17 0 .34 0 .49.01.16.01.37-.06.58.44.21.5.72 1.76.78 1.89.06.12.1.27.02.44-.08.17-.12.27-.24.42-.12.15-.26.33-.37.44-.12.12-.25.25-.11.5.14.24.63 1.04 1.35 1.69.93.83 1.7 1.09 1.95 1.21.24.12.38.1.52-.06.14-.17.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.38.65 1.62.77.24.12.4.18.46.28.06.1.06.59-.18 1.27Z"/>
+
+        </svg>
+
+
+        <span>
+          Pedir atendimento agora
+        </span>
+
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<footer>
 
-<h3>CHAVEIRO PORTO ALEGRE</h3>
+<!-- =====================================================
+     INFORMAÇÕES
+===================================================== -->
 
-<br>
+<section class="spec">
 
-<p>Atendimento 24 Horas.</p>
+  <div class="wrap">
 
-<p>WhatsApp: (51) 99525-5922</p>
+    <dl>
 
-<p>Porto Alegre - RS</p>
 
-<p>Pagamento via Pix, Cartão e Dinheiro.</p>
+      <div>
+
+        <dt>
+          Horário
+        </dt>
+
+        <dd>
+          24 horas, todos os dias do ano
+        </dd>
+
+      </div>
+
+
+      <div>
+
+        <dt>
+          Cobertura
+        </dt>
+
+        <dd>
+          Porto Alegre e região
+        </dd>
+
+      </div>
+
+
+      <div>
+
+        <dt>
+          Serviços
+        </dt>
+
+        <dd>
+          Residencial, automotivo, cofres e fechaduras eletrônicas
+        </dd>
+
+      </div>
+
+
+      <div>
+
+        <dt>
+          Orçamento
+        </dt>
+
+        <dd>
+          Informações pelo WhatsApp antes do atendimento
+        </dd>
+
+      </div>
+
+
+      <div>
+
+        <dt>
+          Atendimento
+        </dt>
+
+        <dd>
+          Residências, veículos, empresas e estabelecimentos comerciais
+        </dd>
+
+      </div>
+
+
+      <div>
+
+        <dt>
+          Contato
+        </dt>
+
+        <dd>
+
+          <a
+            href="tel:+5551995255922"
+            style="border-bottom:2px solid var(--yellow)">
+
+            (51) 99525-5922
+
+          </a>
+
+        </dd>
+
+      </div>
+
+
+    </dl>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REGIÕES
+===================================================== -->
+
+<section class="zones" id="regioes">
+
+  <div class="wrap">
+
+    <h2>
+      Onde atendemos
+    </h2>
+
+
+    <p class="zone-type">
+
+      Centro Histórico
+      <i></i>
+
+      Cidade Baixa
+      <i></i>
+
+      Menino Deus
+      <i></i>
+
+      Moinhos de Vento
+      <i></i>
+
+      Petrópolis
+      <i></i>
+
+      Bela Vista
+      <i></i>
+
+      Zona Sul
+      <i></i>
+
+      Zona Norte
+
+    </p>
+
+
+    <p class="zones-note">
+
+      Seu bairro não está na lista?
+      Entre em contato pelo WhatsApp.
+      Atendemos diferentes regiões de Porto Alegre conforme disponibilidade.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="faq" id="duvidas">
+
+  <div class="wrap">
+
+    <h2>
+      Antes de chamar
+    </h2>
+
+
+    <div class="faq-list">
+
+
+      <details open>
+
+        <summary>
+          Vocês atendem residências e apartamentos?
+        </summary>
+
+        <p>
+          Sim. Realizamos atendimentos residenciais para abertura
+          de portas, troca de fechaduras, instalação de fechaduras
+          e outros serviços de chaveiro.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Vocês fazem abertura de veículos?
+        </summary>
+
+        <p>
+          Sim. Trabalhamos com abertura de veículos e serviços
+          relacionados a chaves automotivas, conforme o modelo
+          e a situação apresentada.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Vocês fazem abertura de cofres?
+        </summary>
+
+        <p>
+          Sim. Realizamos avaliação e atendimento para abertura
+          de cofres, utilizando ferramentas e procedimentos
+          adequados ao tipo de equipamento.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Vocês instalam fechaduras eletrônicas?
+        </summary>
+
+        <p>
+          Sim. Trabalhamos com instalação, configuração,
+          manutenção e substituição de fechaduras eletrônicas,
+          digitais e biométricas, conforme o modelo.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Vocês atendem de madrugada e em feriados?
+        </summary>
+
+        <p>
+          Sim. O telefone e o WhatsApp ficam disponíveis
+          para solicitações de atendimento 24 horas.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Como posso solicitar um orçamento?
+        </summary>
+
+        <p>
+          Entre em contato pelo WhatsApp e informe o tipo de serviço,
+          sua localização e, quando possível, o modelo da fechadura,
+          veículo ou cofre. Assim podemos orientar sobre o atendimento.
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
+
+<footer class="foot">
+
+  <div class="wrap">
+
+
+    <a
+      class="foot-tel"
+      href="tel:+5551995255922">
+
+      (51) 99525-5922
+
+    </a>
+
+
+    <p class="foot-sub">
+      Chaveiro Porto Alegre — residencial, automotivo,
+      cofres e fechaduras eletrônicas.
+    </p>
+
+
+    <div class="foot-cols">
+
+
+      <div>
+
+        <b>
+          Falar agora
+        </b>
+
+        <a
+          href="https://wa.me/5551995255922?text=Olá! Preciso de um chaveiro em Porto Alegre."
+          target="_blank"
+          rel="noopener">
+
+          WhatsApp
+
+        </a>
+
+        <a href="tel:+5551995255922">
+          Telefone
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <b>
+          Serviços
+        </b>
+
+        <a href="#servicos">
+          Chaveiro residencial
+        </a>
+
+        <a href="#servicos">
+          Chaveiro automotivo
+        </a>
+
+        <a href="#servicos">
+          Abertura de cofres
+        </a>
+
+        <a href="#servicos">
+          Fechaduras eletrônicas
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <b>
+          Atendimento
+        </b>
+
+        <a href="#regioes">
+          Porto Alegre, RS
+        </a>
+
+        <a href="#duvidas">
+          Dúvidas frequentes
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <b>
+          Serviços
+        </b>
+
+        Atendimento residencial,
+        automotivo e comercial.
+
+        <br><br>
+
+        Fechaduras convencionais
+        e eletrônicas.
+
+      </div>
+
+
+    </div>
+
+
+    <p class="seo">
+
+      Chaveiro 24 horas em Porto Alegre especializado em
+      chaveiro residencial, chaveiro automotivo, abertura de
+      cofres e fechaduras eletrônicas. Atendimento para abertura
+      de portas, veículos e cofres, troca e instalação de fechaduras,
+      além de instalação e manutenção de fechaduras digitais,
+      eletrônicas e biométricas. Atendimento em Porto Alegre
+      e diferentes regiões da cidade. Solicite informações e
+      atendimento pelo WhatsApp.
+
+    </p>
+
+
+    <p class="copy">
+
+      &copy;
+
+      <span id="ano">
+        2026
+      </span>
+
+      Chaveiro Porto Alegre
+
+    </p>
+
+
+  </div>
 
 </footer>
 
 
-<a class="whatsapp"
-href="https://wa.me/5551995255922?text=Olá! Preciso de um chaveiro em Porto Alegre."
-target="_blank">
 
-WhatsApp
+<!-- =====================================================
+     BARRA MOBILE
+===================================================== -->
 
-</a>
+<nav
+  class="actionbar"
+  aria-label="Atendimento rápido">
+
+
+  <a
+    class="ab-wa"
+    href="https://wa.me/5551995255922?text=Olá! Preciso de um chaveiro em Porto Alegre."
+    target="_blank"
+    rel="noopener">
+
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true">
+
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.02c-.24.68-1.4 1.3-1.93 1.35-.5.05-1.13.07-3.3-.86-2.55-1.1-4.14-3.74-4.27-3.91-.12-.18-1-1.33-1-2.54 0-1.2.63-1.79.86-2.03.23-.25.5-.31.67-.31.17 0 .34 0 .49.01.16.01.37-.06.58.44.21.5.72 1.76.78 1.89.06.12.1.27.02.44-.08.17-.12.27-.24.42-.12.15-.26.33-.37.44-.12.12-.25.25-.11.5.14.24.63 1.04 1.35 1.69.93.83 1.7 1.09 1.95 1.21.24.12.38.1.52-.06.14-.17.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.38.65 1.62.77.24.12.4.18.46.28.06.1.06.59-.18 1.27Z"/>
+
+    </svg>
+
+
+    Chamar no WhatsApp
+
+
+  </a>
+
+
+  <a
+    class="ab-tel"
+    href="tel:+5551995255922"
+    aria-label="Ligar para (51) 99525-5922">
+
+
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.1"
+      stroke-linecap="round"
+      stroke-linejoin="round">
+
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/>
+
+    </svg>
+
+
+  </a>
+
+</nav>
+
+
+
+<script>
+
+document.getElementById("ano").textContent =
+  new Date().getFullYear();
+
+</script>
+
 
 </body>
 </html>
